@@ -1,0 +1,149 @@
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
+#custom alias
+alias dirs="ls -al | grep '^d'"
+alias l="ls -al"
+alias lf="ls -aFG"
+alias lm="ls -al|more"
+alias h="history"
+alias html="cd /web/apache/htdocs/devdaily/html"
+alias logs="cd /web/apache/htdocs/devdaily/logs"
+alias qp="ps auxwww|more"
+alias nu="who|wc -l"
+# GIT
+alias gpom="git push origin master"
+alias gs="git status"
+alias gb="git branch"
+alias gco="git checkout"
+#docker
+function dcr-fn {
+docker-compose run $@
+}
+function dc-fn {
+        docker-compose $*
+}
+alias dc=dc-fn
+alias dcud="docker-compose up"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcr=dcr-fn
+alias dcrs="docker-compose restart"
+alias dim="docker images"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dsp="docker system prune --all"
+alias dcrd="docker-compose run --rm app bash"
+alias dcrt="docker-compose run --rm -e 'RAILS_ENV=test' app bash"
+# make current user owner
+alias mcuo="sudo chown -R $USER ."
+
+
+# for office
+alias working="cd ~/Desktop/namespace/working/"
+alias oxmart="cd ~/Desktop/namespace/working/oxmart"
+alias calcu-app="cd ~/Desktop/namespace/working/calcu_web-app"
+alias calcu-api="cd ~/Desktop/namespace/working/calcu_web-api"
+alias affiliateman="cd ~/Desktop/namespace/working/affiliateman"
+alias oriai-relatedly="cd ~/Desktop/namespace/working/oriai_relatedly"
+alias nft-app="cd ~/Desktop/namespace/working/nft-app"
+alias riverexpress-web="cd ~/Desktop/namespace/working/riverexpress_admin-web"
+alias riverexpress-api="cd ~/Desktop/namespace/working/riverexpress-api"
+alias techbrain-app="cd ~/Desktop/namespace/working/techbrain-app"
+alias worldtimes="cd ~/Desktop/namespace/working/worldtimes"
+alias klotho="cd ~/Desktop/namespace/working/klotho"
+alias gh="/usr/bin/gh"
+
+# rails-dev shortcut
+alias rails-clear="rails tmp:clear log:clear jobs:clear"
+alias rails-clobber="rails javascript:clobber css:clobber assets:clobber"
+alias rails-clear-all="rails-clobber && rails-clear"
+alias rubocop="bundle exec rubocop"
+alias rails-annotate="bundle exec annotate --models"
+alias rails-test="bundle exec rspec&& rails-clear"
+alias rails-prepare="bundle exec rake lint && rails-test && rails-annotate"
+
+# for personal
+alias petshop="cd ~/Desktop/personal/github/rajdhani-petshop/"
+alias codemantra="cd ~/Desktop/personal/github/codemantras/"
+
+alias restart="shutdown -r"
+
+alias lampp="sudo /opt/lampp/lampp"
+
+alias ml-server="uvicorn app.main:app --reload"
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
+
+# Load Bash It
+# source "$BASH_IT"/bash_it.sh
+
+# github cli
+alias gh="/usr/bin/gh"
+
+
+
+export EDITOR="code --wait"
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+export EDITOR="code --wait"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# form bash-it
+alias g='git' # git
+alias gp='git push' # push
+alias gl='git pull' # pull
+alias coi='composer install'
+alias c='clear'
+# Language aliases
+alias rb='ruby'
+alias py='python'
+alias ipy='ipython'
+
+alias ..='cd ..'         # Go up one directory
+alias cd..='cd ..'       # Common misspelling for going up one directory
+alias ...='cd ../..'     # Go up two directories
+alias ....='cd ../../..' # Go up three directories
+alias -- -='cd -'        # Go back
+# heroku
+alias h='heroku'
+# Rails Commands
+alias r='rails'
+alias rg='rails g'
+alias rs='rails s'
+alias rc='rails c'
+alias rn='rails new'
+alias rb='rails dbconsole'
+alias rp='rails plugin'
+alias ra='rails application'
+alias rd='rails destroy'
+alias dbm='rake db:migrate'
+# Aliases
+alias ya='yarn'
+alias yai='yarn init'
+alias yaa='yarn add'
+alias yaga='yarn global add'
+alias yaad='yarn add --dev'
+alias yau='yarn upgrade'
+alias yarm='yarn remove'
+alias yagrm='yarn global remove'
+alias yaod='yarn outdated'
+alias yapa='yarn pack'
+alias yap='yarn publish'
+alias yasu='yarn self-update'
+alias yaru='yarn run'
+alias yat='yarn test'
+alias yas='yarn serve'
+alias yacc='yarn cache clean'
+alias yack='yarn check'
+alias yals='yarn list'
+alias yain='yarn info'
+alias yali='yarn licenses ls'
+alias yaloi='yarn login'
+alias yaloo='yarn logout'
