@@ -64,8 +64,10 @@ alias rails-clobber="rails javascript:clobber css:clobber assets:clobber"
 alias rails-clear-all="rails-clobber && rails-clear"
 alias rubocop="bundle exec rubocop"
 alias rails-annotate="bundle exec annotate --models"
-alias rails-test="bundle exec rspec&& rails-clear"
-alias rails-prepare="bundle exec rake lint && rails-test && rails-annotate"
+alias rails-annotate="rails-annotate -d && rails-annotate"
+alias rails-test="bundle exec rspec && rails-clear"
+alias rails-check="bundle exec rake lint && rails-test"
+alias rails-prepare="rails-check && rails-annotate"
 
 # for personal
 alias petshop="cd ~/Desktop/personal/github/rajdhani-petshop/"
@@ -124,6 +126,7 @@ alias rp='rails plugin'
 alias ra='rails application'
 alias rd='rails destroy'
 alias dbm='rake db:migrate'
+
 # Aliases
 alias ya='yarn'
 alias yai='yarn init'
@@ -147,3 +150,67 @@ alias yain='yarn info'
 alias yali='yarn licenses ls'
 alias yaloi='yarn login'
 alias yaloo='yarn logout'
+
+# mysq with php myamin
+alias phpmyadmin-start='docker stop phpmyadmin && docker rm phpmyadmin && docker run -d --name phpmyadmin -e PMA_HOST=172.17.0.1 -p 8080:80 phpmyadmin'
+
+# laravel started ====================================================================
+
+alias a:='php artisan'
+
+# cache
+alias a:cacheclear='php artisan cache:clear'
+
+# command
+alias a:command='php artisan command:make'
+
+# config
+alias a:confpub='php artisan config:publish'
+
+# controller
+alias a:controller='php artisan make:controller'
+
+# db
+alias a:seed='php artisan db:seed'
+
+# key
+alias a:key='php artisan key:generate'
+
+# migrate
+alias a:migrate='php artisan migrate'
+alias a:mig='a:migrate'
+alias a:miginstall='php artisan migrate:install'
+alias a:migmake='php artisan migrate:make'
+alias a:migcreate='php artisan migrate:create'
+alias a:migpublish='php artisan migrate:publish'
+alias a:migrefresh='php artisan migrate:refresh'
+alias a:migreset='php artisan migrate:reset'
+alias a:migrollback='php artisan migrate:rollback'
+alias a:rollback='a:migrollback'
+
+
+# session
+alias a:stable='php artisan session:table'
+
+
+# laravel ended ====================================================================
+alias d-start-phpmyadmin="docker run --name phpmyadmin -e PMA_HOST=172.17.0.1 -p 8080:80"
+alias d-start-phpmyadmin-background="docker run -d --name phpmyadmin -e PMA_HOST=172.17.0.1 -p 8080:80"
+alias d-remove="docker rm"
+alias d-stop="docker stop"
+alias phpmyadmin="d-remove phpmyadmin && d-start-phpmyadmin-background phpmyadmin"
+alias phpmyadmin-restart="docker stop phpmyadmin && d-remove phpmyadmin && d-start-phpmyadmin-background phpmyadmin"
+
+alias pbcopy="xclip -sel clip"
+
+# folder size
+alias f-size="du -sh"
+
+# Package management aliases
+alias update='sudo apt update'     # Update package lists
+alias upgrade='sudo apt upgrade'   # Upgrade installed packages
+
+# System control aliases
+alias reboot='sudo reboot'         # Reboot the system
+alias shutdown='sudo shutdown now' # Shutdown the system
+
