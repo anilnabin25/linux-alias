@@ -119,6 +119,7 @@ alias h='heroku'
 alias r='rails'
 alias rg='rails g'
 alias rs='rails s'
+alias rsb='rs -b 0.0.0.0'
 alias rc='rails c'
 alias rn='rails new'
 alias rb='rails dbconsole'
@@ -209,6 +210,7 @@ alias f-size="du -sh"
 # Package management aliases
 alias update='sudo apt update'     # Update package lists
 alias upgrade='sudo apt upgrade'   # Upgrade installed packages
+alias uupgrade='update && upgrade' # Update and upgrade installed packages
 
 # System control aliases
 alias reboot='sudo reboot'         # Reboot the system
