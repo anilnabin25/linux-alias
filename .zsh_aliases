@@ -22,23 +22,23 @@ alias gb="git branch"
 alias gco="git checkout"
 #docker
 function dcr-fn {
-docker-compose run $@
+docker compose run $@
 }
 function dc-fn {
-        docker-compose $*
+        docker compose $*
 }
 alias dc=dc-fn
-alias dcud="docker-compose up"
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
+alias dcud="docker compose up"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
 alias dcr=dcr-fn
-alias dcrs="docker-compose restart"
+alias dcrs="docker compose restart"
 alias dim="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dsp="docker system prune --all"
-alias dcrd="docker-compose run --rm app bash"
-alias dcrt="docker-compose run --rm -e 'RAILS_ENV=test' app bash"
+alias dcrd="docker compose run --rm app bash"
+alias dcrt="docker compose run --rm -e 'RAILS_ENV=test' app bash"
 # make current user owner
 alias mcuo="sudo chown -R $USER ."
 
@@ -120,6 +120,7 @@ alias r='rails'
 alias rg='rails g'
 alias rs='rails s'
 alias rsb='rs -b 0.0.0.0'
+alias rjobs='r jobs:work'
 alias rc='rails c'
 alias rn='rails new'
 alias rb='rails dbconsole'
@@ -215,4 +216,3 @@ alias uupgrade='update && upgrade' # Update and upgrade installed packages
 # System control aliases
 alias reboot='sudo reboot'         # Reboot the system
 alias shutdown='sudo shutdown now' # Shutdown the system
-
