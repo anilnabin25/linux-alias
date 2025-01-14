@@ -68,6 +68,10 @@ alias rails-reannotate="rails-annotate -d && rails-annotate"
 alias rails-test="bundle exec rspec && rails-clear"
 alias rails-check="bundle exec rake lint && rails-test"
 alias rails-prepare="rails-check && rails-annotate"
+alias rails-start="overmind start -f Procfile.dev"
+alias rails-stop="rm -f ./.overmind.sock"
+alias rails-restart="rails-stop && rails-start"
+alias rails-connect="overmind connect"
 
 # for personal
 alias petshop="cd ~/Desktop/personal/github/rajdhani-petshop/"
@@ -196,8 +200,8 @@ alias a:stable='php artisan session:table'
 
 
 # laravel ended ====================================================================
-alias d-start-phpmyadmin="docker run --name phpmyadmin -e PMA_HOST=172.17.0.1 -p 8081:80"
-alias d-start-phpmyadmin-background="docker run -d --name phpmyadmin -e PMA_HOST=172.17.0.1 -p 8081:80"
+alias d-start-phpmyadmin="docker run --name phpmyadmin -e PMA_HOST=172.17.0.1 -e UPLOAD_LIMIT=5120M -p 8081:80"
+alias d-start-phpmyadmin-background="docker run -d --name phpmyadmin -e PMA_HOST=172.17.0.1 -e UPLOAD_LIMIT=5120M -p 8081:80"
 alias d-remove="docker rm"
 alias d-stop="docker stop"
 alias phpmyadmin="d-remove phpmyadmin && d-start-phpmyadmin-background phpmyadmin"
@@ -216,3 +220,12 @@ alias uupgrade='update && upgrade' # Update and upgrade installed packages
 # System control aliases
 alias reboot='sudo reboot'         # Reboot the system
 alias shutdown='sudo shutdown now' # Shutdown the system
+
+# flamshot
+export QT_QPA_PLATFORM=xcb
+
+
+export PATH="$HOME/.composer/vendor/bin:$HOME/.config/composer/vendor/bin:$PATH"
+
+
+
